@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block head %}
+<html lang="fa" dir="rtl">
+<style>
+    .footer {
+        width: 100%;
+        margin-top: auto;
+        position: absolute;
+        bottom: 0;
+    }
+    /* Additional CSS styles for the trainer detail page */
+    .container {
+        margin-top: 20px;
+    }
+    .trainer-image {
+        width: 50%;
+        float: right;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .trainer-image img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .trainer-details {
+        width: 50%;
+        float: left;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .trainer-details h1 {
+        font-size: 24px;
+        margin-top: 0;
+    }
+    .trainer-details p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    /* Luxurious borderless table style */
+    .luxury-table {
+        width: 100%;
+    }
+    .luxury-table th,
+    .luxury-table td {
+        border: none;
+        padding: 10px;
+        text-align: left;
+    }
+    .luxury-table th {
+        background-color: #f2f2f2;
+        font-size: 18px;
+    }
+    .luxury-table td {
+        font-size: 16px;
+        background-color: #f9f9f9;
+    }
+    .luxury-table tr:hover {
+        background-color: #e0e0e0;
+    }
+
+    .button-div {
+        margin-top: 20px;
+    }
+</style>
+{% endblock head %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col trainer-image">
+                <img src="{% if trainer.profile_picture %}{{ trainer.profile_picture.url }}{% endif %}" alt="{{ trainer.user.username }}">
+            </div>
+            <div class="col trainer-details">
+                <h1>{{ trainer.user.name }}</h1>
+                <table class="luxury-table">
+                    <tr>
+                        <th>تخصص</th>
+                        <td>{{ trainer.specialization }}</td>
+                    </tr>
+                    <tr>
+                        <th>سال‌های تجربه</th>
+                        <td>{{ trainer.experience_years }}</td>
+                    </tr>
+                    <!-- Add more trainer-specific details here -->
+                </table>
+                <!-- Add buttons and actions specific to trainers -->
+                <div class="button-div">
+                    <!-- You can add buttons or actions here as needed -->
+                </div>
+                <a class="btn btn-secondary" href="{% url 'trainer-list' %}">بازگشت به لیست مربی‌ها</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+{% endblock %}

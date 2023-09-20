@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Tutorials for {{ muscle_name }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Tutorials for {{ muscle_name }}</h1>
+
+    {% if tutorials %}
+    <ul>
+        {% for tutorial in tutorials %}
+        <li>
+            <h2>{{ tutorial.name }}</h2>
+            <p>Muscle Group: {{ tutorial.muscle_group }}</p>
+            <p>Grade: {{ tutorial.grade }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No tutorials available for {{ muscle_name }}.</p>
+    {% endif %}
+</div>
+{% endblock %}

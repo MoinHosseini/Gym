@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #BodyMap {
+    width: 800px;
+  }
+  
+  polygon:hover,
+  g:hover {
+    fill: red;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,15 @@
+$color-primary:#fff;
+$icons-color:#b2dd4c;
+$text-primary:#777777;
+$heading-color:#222222;
+
+@import url(https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap);
+
+@mixin shado-1{
+    box-shadow: 0px 0px 10px 0px rgba(2, 0, 65, 0.1);
+}
+
+@mixin shado-2{
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1),0 4px 12px rgba(0, 0, 0, 0.1);
+} 
+    

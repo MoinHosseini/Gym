@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Trainee Detail - {{ trainee.user.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 text-primary">Trainee Detail</h1>
+    <div class="card mt-3 bg-light">
+        <div class="card-body">
+            <h5 class="card-title">{{ trainee.user.name }}</h5>
+            <p class="card-text text-muted">Email: {{ trainee.user.email }}</p>
+            <p class="card-text text-info">Fitness Goal: {{ trainee.fitness_goal }}</p>
+            <p class="card-text text-info">Height: {{ trainee.height }} cm</p>
+            <p class="card-text text-info">Weight: {{ trainee.weight }} kg</p>
+            <p class="card-text text-danger">BMI: {{ trainee.bmi }}</p>
+            <p class="card-text text-success">Workout Schedule:</p>
+            <ul class="list-group">
+                {% for tutorial_id, tutorial_name in trainee.workout_schedule.items %}
+                <li class="list-group-item">
+                    <a href="{% url 'tutorial-detail' tutorial_id %}" class="text-primary">{{ tutorial_name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <p class="card-text text-warning mt-3">Trainer: {% if trainee.trainer %}{{ trainee.trainer.user.name }}{% else %}Not assigned{% endif %}</p>
+        </div>
+    </div>
+
+    <a href="{% url 'trainee-list' %}" class="btn btn-secondary mt-3">Back to Trainee List</a>
+
+    <h1 class="mt-5 text-primary">Tutorial List</h1>
+
+    <!-- Filter box -->
+    <input type="text" id="tutorial-filter" class="form-control mt-3" placeholder="Filter tutorials...">
+
+    <!-- List of tutorials -->
+    <ul id="tutorial-list" class="list-group">
+        {% for tutorial in tutorials %}
+        <li class="list-group-item">
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="tutorial_id" value="{{ tutorial.id }}">
+                <button type="submit" class="btn btn-primary">{{ tutorial.name }}</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<style>
+    .card {
+        width: 60%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .list-group {
+        width: 60%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    
+</style>
+
+<script>
+    // JavaScript to filter tutorials as you type
+    const filterInput = document.getElementById('tutorial-filter');
+    const tutorialList = document.getElementById('tutorial-list');
+    const tutorialItems = tutorialList.getElementsByClassName('btn');
+
+    filterInput.addEventListener('input', () => {
+        const filterText = filterInput.value.toLowerCase();
+
+        for (let i = 0; i < tutorialItems.length; i++) {
+            const tutorialName = tutorialItems[i].textContent.toLowerCase();
+            if (tutorialName.includes(filterText)) {
+                tutorialItems[i].style.display = 'block';
+            } else {
+                tutorialItems[i].style.display = 'none';
+            }
+        }
+    });
+</script>
+{% endblock %}

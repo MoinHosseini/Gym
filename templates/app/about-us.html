@@ -1,0 +1,278 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fitness</title>
+    <link rel="stylesheet" href="{% static 'gym/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'gym/assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'gym/assets/css/style.css' %}" />
+</head>
+<!-- =================Body Started==================== -->
+<body>
+  <header>
+    <div class="main-nav sup">
+      <div class="container">
+        <div class="row">
+          <div class="menu-toggle"></div>
+          <div class="logo">
+            <img src="{% static 'gym/assets/images/logo.png' %}">
+          </div>
+
+          <div class="my-nav">
+            <div class="menu">
+              <ul>
+                {% comment %} <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about_us' %}">About Us</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact Us</a></li> {% endcomment %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="abt-01">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="wrapper">
+                      <h2>About Us</h2>
+                      <ul>
+                          <li><a href="{% url 'home' %}">Home</a><i class="far fa-angle-double-right"></i></li>
+                          <li>About Us</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="about-us">
+      <div class="container">
+
+          <div class="row natur-row no-margin w-100">
+              <div class="text-part col-md-6">
+                  <h2>Welcome to <span>Smart Yoga</span></h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius faucibus
+                      ligula non congue. Suspendisse at pretium massa, sit amet</p>
+                      vulputate nibh. Nam posuere eros dolor. Donec vel arcu sagittis, pretium nisl </p>
+                  <p> Cras faucibus laoreet nibh, sit amet tincidunt leo mollis in. Etiam eu mauris metus.
+                      Nulla facilisi. Etiam vestibulum,
+                      nisi et convallis elementum, leo orci aliquam metus, id posuere massa neque vitae
+                      arcu.</p>
+
+                  <p>Integer vulputate vehicula dolor a eleifend. Duis aliquam condimentum sapien,
+                      eget tempor justo. Aenean porttitor nibh metus, sollicitudin egestas metus posuere et
+                      . Fusce egestas volutpat metus, in sodales sem bibendum porta. Nunc hendrerit nunc sit
+                      amet tellus posuere, at malesuada sem gravida. Integer maximus ultricies augue, at
+                      dapibus elit bibendum consequat. Cras faucibus tellus eleifend, fermentum purus in,
+                      dapibus sapien. Praesent nec ornare risus. Etiam iaculis, ligula vel gravida
+                      vestibulum, urna justo posuere ante,
+                      id pretium massa arcu sed mi. Nunc a sollicitudin sem. Duis tempus </p>
+
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius faucibus
+                        ligula non congue. Suspendisse at pretium massa, sit amet</p>
+              </div>
+              <div class="image-part col-md-6">
+                  <img src="{% static 'gym/assets/images/abt-01.jpg' %}" alt="">
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="bg-03">
+    <div class="wrapper d-flex">
+      <div class="left">
+        <div class="image">
+        </div>
+      </div>
+      <div class="right">
+        <div class="content">
+          <h2>WHAT WE DO</h2>
+          <ol>
+            <li>
+              <img src="{% static 'gym/assets/images/icons/1.png' %}">
+              <h3>WEEKLY CHALLENGE</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Error tenetur veritatis sed a ea quae.
+                Accusantium magni laudantium repellendus dolore dignissimos.</p>
+            </li>
+            <li>
+              <img src="{% static 'gym/assets/images/icons/2.png' %}">
+              <h3>PERSONAL TRAINER</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Error tenetur veritatis sed a ea quae.
+                Accusantium magni laudantium repellendus dolore dignissimos.</p>
+            </li>
+            <li>
+              <img src="{% static 'gym/assets/images/icons/3.png' %}">
+              <h3>GROUP CLASSES</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Error tenetur veritatis sed a ea quae.
+                Accusantium magni laudantium repellendus dolore dignissimos.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-04">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading">
+            <h2>OUR TEAM</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="team-main-box">
+            <img src="{% static 'gym/assets/images/team/3.jpg' %}">
+            <div class="team-content-box">
+              <ul>
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+              </ul>
+              <h3>Williams</h3>
+              <b>Trainer</b>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="team-main-box">
+            <img src="{% static 'gym/assets/images/team/2.jpg' %}">
+            <div class="team-content-box">
+              <ul>
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+              </ul>
+              <h3>Williams</h3>
+              <b>Trainer</b>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="team-main-box">
+            <img src="{% static 'gym/assets/images/team/1.jpg' %}">
+            <div class="team-content-box">
+              <ul>
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+              </ul>
+              <h3>Williams</h3>
+              <b>Trainer</b>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="team-main-box">
+            <img src="{% static 'gym/assets/images/team/4.jpg' %}">
+            <div class="team-content-box">
+              <ul>
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+              </ul>
+              <h3>Williams</h3>
+              <b>Trainer</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="_kl_ds_we">
+            <div class="head-footer">
+              <img src="{% static 'gym/assets/images/logo.png' %}">
+              <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</p>
+              <ol>
+                <li><i class="fab fa-facebook-square"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-twitter-square"></i></li>
+                <li><i class="fab fa-linkedin"></i></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="_kl_ds_we">
+            <div class="head-footer">
+              <h3>Services</h3>
+              <ul>
+                <li><i class="fas fa-chevron-right"></i>Home</li>
+                <li><i class="fas fa-chevron-right"></i>About Us</li>
+                <li><i class="fas fa-chevron-right"></i>Services</li>
+                <li><i class="fas fa-chevron-right"></i>Blog</li>
+                <li><i class="fas fa-chevron-right"></i>Contact Us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="_kl_ds_we">
+            <div class="head-footer">
+              <h3>Quick links</h3>
+              <ul>
+                <li><i class="fas fa-chevron-right"></i>Home</li>
+                <li><i class="fas fa-chevron-right"></i>About Us</li>
+                <li><i class="fas fa-chevron-right"></i>Services</li>
+                <li><i class="fas fa-chevron-right"></i>Blog</li>
+                <li><i class="fas fa-chevron-right"></i>Contact Us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="_kl_ds_we">
+            <div class="head-footer">
+              <h3>find us</h3>
+              <ul class="un-hover">
+                <li><i class="far fa-location"></i>USA</li>
+                <li><i class="fas fa-mobile-alt"></i>202 555 0191</li>
+                <li><i class="far fa-envelope"></i>sales@smarteyeapps.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row _pl_we_sq">
+            <div class="col-12">
+              <div class="last-01">
+                <p>2015 @ All Rights Reserved Designed and developed by
+                  <a href="https://www.smarteyeapps.com/">SmarteyeTechnologies</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- =================Body End==================== -->
+
+<script src="{% static 'gym/assets/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'gym/assets/js/popper.min.js' %}"></script>
+<script src="{% static 'gym/assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'gym/assets/js/script.js' %}"></script>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Tutorial{% endblock %}
+
+{% block head %}
+<style>
+    /* Additional CSS styles for the Create Tutorial page */
+    .create-tutorial {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .create-tutorial label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .create-tutorial input[type="text"],
+    .create-tutorial select,
+    .create-tutorial textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+    .create-tutorial button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Style the file input field */
+    .create-tutorial input[type="file"] {
+        border: none;
+        padding: 8px;
+        border-radius: 3px;
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <hr>
+    <div class="create-tutorial">
+        <h2>Create Tutorial</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="{{ form.name.id_for_label }}">Name:</label>
+            {{ form.name }}
+            
+            <label for="{{ form.muscle_name.id_for_label }}">Muscle Name:</label>
+            {{ form.muscle_name }}
+            
+            <label for="{{ form.muscle_group.id_for_label }}">Muscle Group:</label>
+            {{ form.muscle_group }}
+            
+            <label for="{{ form.grade.id_for_label }}">Grade:</label>
+            {{ form.grade }}
+            
+            <!-- Add an input field for the video file -->
+            <label for="{{ form.video.id_for_label }}">Video:</label>
+            {{ form.video }}
+            
+            <hr>
+            
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

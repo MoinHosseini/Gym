@@ -1,0 +1,263 @@
+.banner{
+    position: relative;
+    z-index:9;
+    background:url(../images/background/3.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    height:600px;
+    overflow: hidden;
+    padding:0;
+
+    @media screen and(max-width:767.98px) {
+        height:100%;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px){
+        height:100%;
+    }
+
+    .slider{
+        position:relative;
+        padding:3.125rem 0;
+        height:100%;
+        background:rgba(32,2,93,0.9);
+
+        @media screen and(max-width:767.98px){
+            padding:1.25rem 0;
+        }
+
+        .social-media{
+            position:absolute;
+            z-index:9;
+            top:50%;
+            padding-left:1.25rem;
+            transition:.5s;
+
+            ul{
+                li{
+                    display:block;
+                    margin:.625rem 0;
+
+                    a{
+                        color:$color-primary;
+                    }
+                }
+            }
+        }
+
+        .owl-carousel{
+            .owl-dots{
+                position:absolute;
+                display:flex;
+                flex-direction:column;
+                align-items:flex-end;
+                width:100%;
+                top:50%;
+                z-index:1;
+                padding-right:2.5rem;
+
+                @media screen and(max-width:767.98px){
+                    padding-right:1.25rem;
+                }
+
+                .owl-dot{
+                    height:.625rem;
+                    width:.625rem;
+                    background-color:$color-primary;
+                    border-radius:50%;
+                    display:block;
+                    margin:.625rem 0;
+                    &:focus,&:active{
+                        border:none;
+                        box-shadow:none;
+                    }
+                    &.active{
+                        background-color:$icons-color;
+                        border:1px solid $color-primary;
+                        position: relative;
+                        
+
+                        &::before{
+                            position: absolute;
+                            content:"";
+                            width:1rem;
+                            height:1rem;
+                            border-radius:50%;
+                            border:2px solid $icons-color;
+                            top:-4px;
+                            left:-4px;
+                            z-index:-1;
+                        }
+                    }
+                }
+            }
+            .wrapper {
+                flex-wrap: wrap;
+                flex: 1 1 100%;
+                max-width: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                transition: 0.5s all ease;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                animation-name: fadeInUp;
+
+                @media screen and(max-width:767.98px){
+                    padding:1.25rem;
+                }
+
+                @media (min-width: 768px) and (max-width: 991.98px){
+                    padding:0 1.25rem;
+                }
+
+                .content {
+                    display: block;
+                    width: 50%;
+                    max-width: 50%;
+                    margin: 1.25rem 0;
+                    position: relative;
+                    transition: 0.5s all ease;
+                    -webkit-animation-duration: 1s;
+                    animation-duration: 1s;
+                    -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+                    animation-name: fadeInUp;
+
+                    @media screen and(max-width:767.98px){
+                        width: 100%;
+                        max-width: 100%;
+                        padding:.9375rem;
+
+                    }
+
+                    @media (min-width: 768px) and (max-width: 991.98px){
+                        padding:0 .9375rem;
+                    }
+
+                    h1 {
+                        display: block;
+                        font-size: 2.5rem;
+                        color: $color-primary;
+                        font-weight: 700;
+                        letter-spacing: .0625rem;
+                        text-transform: uppercase;
+                        line-height: 3.125rem;
+
+                        @media screen and(max-width:767.98px){
+                            font-size:1.25rem;
+                            line-height:1.875rem;
+
+                        }
+
+                        @media (min-width: 768px) and (max-width: 991.98px){
+                            font-size:1.875rem;
+                            line-height:2.5rem;
+                        }
+                    }
+
+                    h4 {
+                        margin: 1.25rem 0;
+                        font-size: 1.25rem;
+                        color: #ddd;
+                        line-height: 1.5625rem;
+
+                        @media screen and(max-width:767.98px){
+                            font-size:1.125rem;
+                            line-height:normal;
+                            margin:.625rem 0;
+                        }
+                        @media (min-width: 768px) and (max-width: 991.98px){
+                            font-size:1.125rem;
+                            line-height:normal;
+                        }
+                    }
+
+                    a {
+                        position: relative;
+                        display:inline-block;
+                        padding:.375rem 1.875rem;
+                        color:$color-primary;
+                        font-size:1rem;
+                        text-transform:capitalize;
+                        border:2px solid $icons-color;
+                        border-top-right-radius:1.25rem;
+                        border-bottom-left-radius:1.25rem;
+                        transition:all ease-in-out .5s;
+                        margin:.625rem 0;
+                        overflow: hidden;
+                        &:hover{
+                            border:2px solid $color-primary;
+                            &::before{
+                                transform:scale(1);
+                            }
+                        }
+
+                        &::before{
+                            position: absolute;
+                            content:"";
+                            transform:scale(0);
+                            background:$icons-color;
+                            width:100%;
+                            height:100%;
+                            z-index:-1;
+                            top:0;
+                            left:0;
+                            transition:all ease-in-out .5s;
+
+                        }
+                    }
+                }
+
+                .image {
+                    display: block;
+                    width: 50%;
+                    max-width: 50%;
+                    margin: 1.25rem 0;
+                    transition: 0.5s all ease;
+                    -webkit-animation-duration: 1s;
+                    animation-duration: 1s;
+                    -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+                    animation-name: fadeInUp;
+
+                    @media screen and(max-width:767.98px) {
+                        width: 100%;
+                        max-width: 100%;
+                        margin:.625rem 0;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+section{
+    padding:3.125rem 0;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and(max-width:767.98px){
+        padding:1.25rem 0;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(80px);
+        -ms-transform: translateY(80px);
+        transform: translateY(80px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

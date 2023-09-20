@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Trainee{% endblock %}
+
+{% block head %}
+<style>
+    /* Additional CSS styles for the Create Trainee page */
+    .create-trainee {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .create-trainee label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .create-trainee input,
+    .create-trainee select,
+    .create-trainee input[type="file"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+    .create-trainee button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Style the file input field */
+    .create-trainee input[type="file"] {
+        border: none;
+        padding: 8px;
+        border-radius: 3px;
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <hr>
+    <div class="create-trainee">
+        <h2>Create Trainee</h2>
+        <form method="post">
+            {% csrf_token %}
+            
+            <label for="{{ form.user.name.id_for_label }}">Name:</label>
+            {{ form.user }}
+            
+            <label for="{{ form.fitness_goal.id_for_label }}">Fitness Goal:</label>
+            {{ form.fitness_goal }}
+            
+            <label for="{{ form.height.id_for_label }}">Height:</label>
+            {{ form.height }}
+            
+            <label for="{{ form.weight.id_for_label }}">Weight:</label>
+            {{ form.weight }}
+
+            <label for="{{ form.trainer.id_for_label }}">Trainer:</label>
+            {{ form.trainer }}
+               
+            <hr>
+            
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

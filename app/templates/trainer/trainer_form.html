@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Trainer{% endblock %}
+
+{% block head %}
+<style>
+    /* Additional CSS styles for the Create Trainer page */
+    .create-trainer {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .create-trainer label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .create-trainer input[type="text"],
+    .create-trainer select,
+    .create-trainer input[type="file"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+    .create-trainer button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Style the file input field */
+    .create-trainer input[type="file"] {
+        border: none;
+        padding: 8px;
+        border-radius: 3px;
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <hr>
+    <div class="create-trainer">
+        <h2>Create Trainer</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="{{ form.user.name.id_for_label }}">Name:</label>
+            {{ form.user.name }}
+            
+            <label for="{{ form.specialization.id_for_label }}">Specialization:</label>
+            {{ form.specialization }}
+            
+            <label for="{{ form.experience_years.id_for_label }}">Experience Years:</label>
+            {{ form.experience_years }}
+            
+            <!-- Add an input field for the profile picture -->
+            <label for="{{ form.user.profile_picture.id_for_label }}">Profile Picture:</label>
+            {{ form.profile_picture }}
+            
+            <hr>
+            
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
